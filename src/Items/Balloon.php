@@ -7,12 +7,12 @@ use Jugid\Staurie\Game\Item_Equippable;
 class Balloon extends Item_Equippable {
 
     public function name() : string {
-        return 'Balloon';
+        return 'v';
     }
 
     public function description(): string
     {
-        return 'A wonky Balloon made of plastic.';
+        return '';
     }
 
     public function body_part(): string { 
