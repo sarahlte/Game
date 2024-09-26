@@ -2,7 +2,7 @@
 
 namespace Rpg\Game\Npcs;
 
-use Rpg\Game\Items\KnowledgeBook;
+use Rpg\Game\Items\Knowledgebook;
 use Jugid\Staurie\Game\Npc;
 
 class Virgo extends Npc {
@@ -16,7 +16,7 @@ class Virgo extends Npc {
     }
 
     public function speak() : string|array {
-        $this->giveItem(new KnowledgeBook());
+        $this->giveItem(new Knowledgebook());
         return ['Traveler, you\'ve shown me your strength. I am Virgo, keeper of this earth’s knowledge.',
         '(her voice is gentle, filled with compassion and clarity.)',
         'Take this sacred KnowledgeBook, known to help you in your adventure. Use it wisely on your journey.'];
