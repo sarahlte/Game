@@ -4,8 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Rpg\Game\Npcs\Aries;
-use Rpg\Game\Items\Potion;
+use Rpg\Game\Items\Sword;
 
 
 class Map02 extends Blueprint {
@@ -17,7 +16,7 @@ class Map02 extends Blueprint {
   }
 
   public function name(): string {
-    return 'Enchanted forest part2';
+    return 'Meadow';
   }
 
   public function description(): string { 
@@ -29,11 +28,11 @@ class Map02 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [new Aries()];
+    return [];
   }
 
   public function items(): array {
-    return [new Potion()];
+    return [new Sword()];
   }
 
   public function monsters(): array {
