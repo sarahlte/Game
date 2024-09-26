@@ -2,6 +2,7 @@
 
 use Jugid\Staurie\Component\Console\Console;
 use Jugid\Staurie\Component\Menu\Menu;
+use Jugid\Staurie\Component\Introduction\Introduction;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
 use Jugid\Staurie\Staurie;
 
@@ -14,11 +15,21 @@ $container = $staurie->getContainer();
 
 $menu = $container->registerComponent(Menu::class);
 $menu->configuration([
-  'text'=> 'Welcome to this awesome adventure',
+  'text'=> 'You wake up in an enchanted forest, all alone... Find out who you are.',
   'labels'=> [
   'new_game' => 'Enter the world',
   'quit'=> 'Exit game',
 ]
+]);
+
+$introduction = $container->registerComponent(Introduction::class);
+$introduction->configuration([
+    'text'=>[
+        'You wake up in an enchanted forest, all alone.',
+        'You decide to take a look around to know where you are.'
+    ],
+    'title'=>'Chapter 1 : The enchanted forest.',
+    'scrolling'=>false
 ]);
 
 $staurie->run(); //LANCE LE JEU
