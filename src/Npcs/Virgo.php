@@ -17,7 +17,7 @@ class Virgo extends Npc {
 
     public function speak() : string|array {
         $this->giveItem(new KnowledgeBook());
-        return ['Welcome, traveler. I am Virgo, keeper of the earth’s knowledge.',
+        return ['Traveler, you\'ve shown me your strength. I am Virgo, keeper of this earth’s knowledge.',
         '(her voice is gentle, filled with compassion and clarity.)',
         'Take this sacred KnowledgeBook, known to help you in your adventure. Use it wisely on your journey.'];
     }
