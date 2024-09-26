@@ -5,6 +5,7 @@ namespace src\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
 use src\npcs\Aries;
+use src\items\Potion;
 use src\monsters\Kobold;
 
 class Map1 extends Blueprint {
@@ -32,7 +33,7 @@ class Map1 extends Blueprint {
   }
 
   public function items(): array {
-    return [];
+    return [new Potion()];
   }
 
   public function monsters(): array {
