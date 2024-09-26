@@ -30,6 +30,9 @@ $map = $container->registerComponent(Map::class);
 $map->configuration([
     'directory'=>__DIR__ . '/src/Maps',
     'namespace'=>'Rpg\Game\Maps', 
+    'navigation'=>true,
+    'map_enable'=>true,
+    'compass_enable'=>true
 ]);
 
 $introduction = $container->registerComponent(Introduction::class);

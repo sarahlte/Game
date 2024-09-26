@@ -7,17 +7,18 @@ use Jugid\Staurie\Game\Position\Position;
 use Rpg\Game\Npcs\Aries;
 use Rpg\Game\Monsters\Kobold;
 use Rpg\Game\Items\Potion;
+use Rpg\Game\Monsters\Goblin;
 
-class Map01 extends Blueprint {
+class Map02 extends Blueprint {
   private Position $position;
 
   public function __construct()
   {
-      $this->position = new Position(0,0);
+      $this->position = new Position(0,1);
   }
 
   public function name(): string {
-    return 'Enchanted forest';
+    return 'Enchanted forest part2';
   }
 
   public function description(): string { 
@@ -29,11 +30,11 @@ class Map01 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Aries()];
   }
 
   public function items(): array {
-    return [];
+    return [new Potion()];
   }
 
   public function monsters(): array {
