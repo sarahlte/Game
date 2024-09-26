@@ -4,7 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Rpg\Game\Items\Balloon;
+use Rpg\Game\Npcs\Guide;
 
 class Map01 extends Blueprint {
   private Position $position;
@@ -27,11 +27,11 @@ class Map01 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Guide()];
   }
 
   public function items(): array {
-    return [new Balloon()];
+    return [];
   }
 
   public function monsters(): array {
