@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Item_Equippable;
 class KingRoar extends Item_Equippable {
 
     public function name() : string {
-        return "King's Roar";
+        return "King's_roar";
     }
 
     public function description(): string
