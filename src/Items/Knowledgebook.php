@@ -4,7 +4,7 @@ namespace Rpg\Game\Items;
 
 use Jugid\Staurie\Game\Item_Equippable;
 
-class KnowledgeBook extends Item_Equippable {
+class Knowledgebook extends Item_Equippable {
 
     public function name() : string {
         return 'Book of knowledge';
