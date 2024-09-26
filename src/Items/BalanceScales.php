@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Item_Equippable;
 class BalanceScales extends Item_Equippable {
 
     public function name() : string {
-        return 'Balance Scales';
+        return 'Balance_Scales';
     }
 
     public function description(): string

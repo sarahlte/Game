@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Item_Equippable;
 class HornedShield extends Item_Equippable {
 
     public function name() : string {
-        return 'Horned Shield';
+        return 'Horned_shield';
     }
 
     public function description(): string

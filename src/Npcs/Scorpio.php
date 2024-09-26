@@ -3,6 +3,8 @@
 namespace Rpg\Game\Npcs;
 
 use Rpg\Game\Items\PoisonDagger;
+use Rpg\Game\Items\KingRoar;
+use Rpg\Game\Items\HornedShield;
 use Jugid\Staurie\Game\Npc;
 
 class Scorpio extends Npc {
