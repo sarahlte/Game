@@ -11,7 +11,7 @@ class Fluffy extends Monster {
     }
 
     public function description(): string { 
-        return 'The cutest thing alive';
+        return "The cutest thing alive, WARNING don't touch";
     }
 
     public function level() : int {
