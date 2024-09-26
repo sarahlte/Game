@@ -1,0 +1,9 @@
+{
+    "name": "rpg/game",
+    "autoload": {
+        "psr-4": {
+            "Rpg\\Game\\": "src/"
+        }
+    },
+    "require": {}
+}
