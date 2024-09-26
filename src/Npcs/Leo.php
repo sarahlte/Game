@@ -2,7 +2,7 @@
 
 namespace Rpg\Game\Npcs;
 
-use Rpg\Game\Items\King;
+use Rpg\Game\Items\KingRoar;
 use Jugid\Staurie\Game\Npc;
 
 class Leo extends Npc {
@@ -16,7 +16,7 @@ class Leo extends Npc {
     }
 
     public function speak() : string|array {
-        $this->giveItem(new King());
+        $this->giveItem(new KingRoar());
         return ['Ah, a brave soul dares to approach the Lion King.',
         '(his voice is deep and commanding, filled with pride.)',
         'Take this, "King\'s Roar", a sword forged in the heart of the sun. Wield it with honor, or not at all.'];

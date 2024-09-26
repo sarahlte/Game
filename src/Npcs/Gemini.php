@@ -2,7 +2,7 @@
 
 namespace Rpg\Game\Npcs;
 
-use Rpg\Game\Items\Dagger;
+use Rpg\Game\Items\TwinsDagger;
 use Jugid\Staurie\Game\Npc;
 
 class Gemini extends Npc {
@@ -16,10 +16,10 @@ class Gemini extends Npc {
     }
 
     public function speak() : string|array {
-        $this->giveItem(new Dagger());
+        $this->giveItem(new TwinsDagger());
         return ['Greetings, traveler. We are Gemini, the twins of duality.',
         '(the twins speak in unison, their voices blending into one.)',
-        '(they hand you a finely crafted dagger, symbolizing their sharpness and precision in battle.)'];
+        '(they hand you a finely crafted twins dagger, symbolizing their sharpness and precision in battle.)'];
     }
 
 }
