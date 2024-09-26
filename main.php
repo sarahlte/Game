@@ -21,7 +21,9 @@ $menu->configuration([
   'quit'=> 'Exit game',
 ]
 ]);
+
 echo chr(27).chr(91).'H'.chr(27).chr(91).'J'; 
+
 $introduction = $container->registerComponent(Introduction::class);
 $introduction->configuration([
     'text'=>[
