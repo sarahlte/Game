@@ -1,6 +1,6 @@
 <?php
 
-namespace Jugid\Staurie\Example\Items;
+namespace Rpg\Game\Items;
 
 use Jugid\Staurie\Game\Item_Equippable;
 

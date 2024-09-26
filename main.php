@@ -3,6 +3,7 @@
 use Jugid\Staurie\Component\Console\Console;
 use Jugid\Staurie\Component\Menu\Menu;
 use Jugid\Staurie\Component\Map\Map;
+use Jugid\Staurie\Component\Inventory\Inventory;
 use Jugid\Staurie\Component\Introduction\Introduction;
 use Jugid\Staurie\Component\Money\Money;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
@@ -25,6 +26,8 @@ $menu->configuration([
 ]);
 
 echo chr(27).chr(91).'H'.chr(27).chr(91).'J'; 
+
+$inventory = $container->registerComponent(component_class: Inventory::class);
 
 $map = $container->registerComponent(Map::class);
 $map->configuration([
