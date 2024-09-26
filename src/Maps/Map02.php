@@ -5,9 +5,8 @@ namespace Rpg\Game\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
 use Rpg\Game\Npcs\Aries;
-use Rpg\Game\Monsters\Kobold;
 use Rpg\Game\Items\Potion;
-use Rpg\Game\Monsters\Goblin;
+
 
 class Map02 extends Blueprint {
   private Position $position;
