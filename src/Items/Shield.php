@@ -4,10 +4,10 @@ namespace Rpg\Game\Items;
 
 use Jugid\Staurie\Game\Item_Equippable;
 
-class Potion extends Item_Equippable {
+class Shield extends Item_Equippable {
 
     public function name() : string {
-        return 'Potion';
+        return 'Shield';
     }
 
     public function description(): string
