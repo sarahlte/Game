@@ -25,10 +25,10 @@ $menu->configuration([
 $introduction = $container->registerComponent(Introduction::class);
 $introduction->configuration([
     'text'=>[
-        'This is an introduction to test the introduction component',
-        'You can use it multiline by using an array in configuration'
+        'You wake up in an enchanted forest, all alone.',
+        'You decide to take a look around to know where you are.'
     ],
-    'title'=>'Chapter 1 : The new game',
+    'title'=>'Chapter 1 : The enchanted forest.',
     'scrolling'=>false
 ]);
 
