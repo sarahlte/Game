@@ -4,6 +4,7 @@ namespace src\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use src\npcs\Aries;
 
 class Map1 extends Blueprint {
   private Position $position;
@@ -26,7 +27,7 @@ class Map1 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Aries()];
   }
 
   public function items(): array {
