@@ -32,7 +32,7 @@ class Fluffy extends Monster {
 
     public function skills(): array { 
         return [
-            'Big Lick' => 100000000000000000,
+            'Big Lick' => 1000,
         ];
     }
 }
