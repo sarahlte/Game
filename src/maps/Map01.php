@@ -6,6 +6,7 @@ use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
 use Rpg\Game\Npcs\Aries;
 use Rpg\Game\Monsters\Kobold;
+use Rpg\Game\Items\Potion;
 
 class Map01 extends Blueprint {
   private Position $position;

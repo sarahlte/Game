@@ -2,7 +2,7 @@
 
 namespace Rpg\Game\Npcs;
 
-use Jugid\Staurie\Example\Items\Potion;
+use Rpg\Game\Items\Potion;
 use Jugid\Staurie\Game\Npc;
 
 class Aries extends Npc {
