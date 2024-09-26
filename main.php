@@ -7,6 +7,7 @@ use Jugid\Staurie\Component\Character\MainCharacter;
 use Jugid\Staurie\Component\Inventory\Inventory;
 use Jugid\Staurie\Component\Introduction\Introduction;
 use Jugid\Staurie\Component\Money\Money;
+use Jugid\Staurie\Component\Level\Level;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
 use Jugid\Staurie\Staurie;
 
@@ -56,5 +57,7 @@ $money->configuration([
     'name' => 'Clochette',
     'start_with' => 0
 ]);
+
+$level = $container->registerComponent(component_class: Level::class);
 
 $staurie->run(); //LANCE LE JEU
