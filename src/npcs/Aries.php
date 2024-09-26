@@ -12,11 +12,13 @@ class Aries extends Npc {
     }
 
     public function description() : string {
-        return 'A man with his face hidden by his long hair… A mysterious aura emanates from him.';
+        return 'A man with his face hidden by his long white hair… A mysterious aura emanates from him.';
     }
 
     public function speak() : string|array {
-        return 'Heus adolescentulo, quod te mihi fatum attulit';
+        return ['Heus adolescentulo, quod te mihi fatum attulit',
+        '(the man seems to speak a language you do not understand.) (he ends up giving you a shield and disappearing.)',
+        '(not understanding a thing, you choose to take the shield and continue on your adventure)'];
     }
 
 }
