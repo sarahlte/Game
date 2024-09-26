@@ -21,6 +21,9 @@ class Peeble extends Item_Equippable {
 
     public function statistics(): array
     {
-        return [];
+        return ['chance'=> -99,
+            'ability'=>-99,
+            'wisdom'=>-99,
+            'defense'=>-99];
     }
 }
