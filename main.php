@@ -14,7 +14,7 @@ $container = $staurie->getContainer();
 
 $menu = $container->registerComponent(Menu::class);
 $menu->configuration([
-  'text'=> 'Welcome to this awesome adventure',
+  'text'=> 'You wake up in an ehcnated forest, all alone... Find out who you are.',
   'labels'=> [
   'new_game' => 'Enter the world',
   'quit'=> 'Exit game',
