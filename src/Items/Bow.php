@@ -22,7 +22,7 @@ class Bow extends Item_Equippable {
     public function statistics(): array
     {
         return [
-            'attack'=> 50
+            'attack'=> 15
         ];
     }
 }
