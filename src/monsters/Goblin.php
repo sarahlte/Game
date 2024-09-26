@@ -1,38 +1,38 @@
 <?php
 
-namespace Jugid\Staurie\Example\Monsters;
+namespace src\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 
-class Kobold extends Monster {
+class Goblin extends Monster {
 
     public function name() : string {
-        return 'Kobold';
+        return 'Goblin';
     }
 
     public function description(): string { 
-        return 'This monster look like a dog but is as powerful as an adult human';
+        return 'This a vile monster that does not hesitate to harm everything in its path, and its also the weakest monster';
     }
 
     public function level() : int {
-        return 2;
+        return 1;
     }
 
     public function health_points(): int { 
-        return 20;
+        return 15;
     }
 
     public function defense(): int { 
-        return 3;
+        return 2;
     }
 
     public function experience(): int { 
-        return 30;
+        return 20;
     }
 
     public function skills(): array { 
         return [
-            'Claw Strike' => 15,
+            'Charge' => 10,
         ];
     }
 }
