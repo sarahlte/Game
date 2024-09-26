@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Item_Equippable;
 class PoisonDagger extends Item_Equippable {
 
     public function name() : string {
-        return "Poison Dagger";
+        return "Poison_dagger";
     }
 
     public function description(): string
