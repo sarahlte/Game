@@ -4,7 +4,6 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Rpg\Game\Items\Sword;
 
 
 class Map03 extends Blueprint {
