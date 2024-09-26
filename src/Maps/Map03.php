@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Position\Position;
 use Rpg\Game\Items\Sword;
 
 
-class Map02 extends Blueprint {
+class Map03 extends Blueprint {
   private Position $position;
 
   public function __construct()
