@@ -16,7 +16,7 @@ class Bow extends Item_Equippable {
     }
 
     public function body_part(): string { 
-        return 'shield';
+        return 'hand';
     }
 
     public function statistics(): array
