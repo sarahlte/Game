@@ -6,7 +6,7 @@ use Rpg\Game\Items\Potion;
 use Jugid\Staurie\Game\Npc;
 
 class Aries extends Npc {
-
+    
     public function name() : string {
         return 'Aries';
     }
