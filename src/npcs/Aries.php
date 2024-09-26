@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Npcs;
+namespace Rpg\Game\Npcs;
 
 use Jugid\Staurie\Example\Items\Potion;
 use Jugid\Staurie\Game\Npc;

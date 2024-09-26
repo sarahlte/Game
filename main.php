@@ -19,20 +19,17 @@ $menu = $container->registerComponent(Menu::class);
 $menu->configuration([
   'text'=> 'You wake up in an enchanted forest, all alone... Find out who you are.',
   'labels'=> [
-  'new_game' => 'Enter the world',
-  'quit'=> 'Exit game',
-]
+    'new_game' => 'Enter the world',
+    'quit'=> 'Exit game',
+    ]
 ]);
 
 echo chr(27).chr(91).'H'.chr(27).chr(91).'J'; 
 
 $map = $container->registerComponent(Map::class);
 $map->configuration([
-    'directory'=>__DIR__.'/maps',
-    'namespace'=>'src\Maps', 
-    'navigation'=>true,
-    'map_enable'=>true,
-    'compass_enable'=>true
+    'directory'=>__DIR__ . '/src/maps',
+    'namespace'=>'Rpg\Game\Maps', 
 ]);
 
 $introduction = $container->registerComponent(Introduction::class);

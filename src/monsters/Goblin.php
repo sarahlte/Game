@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Monsters;
+namespace Rpg\Game\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace src\Maps;
+namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use src\npcs\Aries;
-use src\monsters\Kobold;
+use Rpg\Game\Npcs\Aries;
+use Rpg\Game\Monsters\Kobold;
 
-class Map1 extends Blueprint {
+class Map01 extends Blueprint {
   private Position $position;
 
   public function __construct()
