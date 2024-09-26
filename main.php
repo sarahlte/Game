@@ -26,11 +26,11 @@ $menu->configuration([
 
 echo chr(27).chr(91).'H'.chr(27).chr(91).'J'; 
 
-/* $map = $container->registerComponent(Map::class);
+$map = $container->registerComponent(Map::class);
 $map->configuration([
-    'directory'=>__DIR__ . '/src/maps',
+    'directory'=>__DIR__ . '/src/Maps',
     'namespace'=>'Rpg\Game\Maps', 
-]); */
+]);
 
 $introduction = $container->registerComponent(Introduction::class);
 $introduction->configuration([
