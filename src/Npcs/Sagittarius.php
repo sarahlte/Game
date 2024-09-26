@@ -16,7 +16,7 @@ class Sagittarius extends Npc {
     }
 
     public function speak() : string|array {
-        $this->giveItem(new Boow());
+        $this->giveItem(new Bow());
         return ['Well done, traveler, you treuly deserve to hunt by my side.',
         '(the big hands of the man handle you a golden bow.)'];
     }
