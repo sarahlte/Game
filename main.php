@@ -2,6 +2,7 @@
 
 use Jugid\Staurie\Component\Console\Console;
 use Jugid\Staurie\Component\Menu\Menu;
+use Jugid\Staurie\Component\Introduction\Introduction;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
 use Jugid\Staurie\Staurie;
 
@@ -19,6 +20,16 @@ $menu->configuration([
   'new_game' => 'Enter the world',
   'quit'=> 'Exit game',
 ]
+]);
+
+$introduction = $container->registerComponent(Introduction::class);
+$introduction->configuration([
+    'text'=>[
+        'This is an introduction to test the introduction component',
+        'You can use it multiline by using an array in configuration'
+    ],
+    'title'=>'Chapter 1 : The new game',
+    'scrolling'=>false
 ]);
 
 $staurie->run(); //LANCE LE JEU
