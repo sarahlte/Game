@@ -22,7 +22,7 @@ class Knowledgebook extends Item_Equippable {
     public function statistics(): array
     {
         return [
-            'wisdom'=> +5,
+            'wisdom'=> 10,
         ];
     }
 }
