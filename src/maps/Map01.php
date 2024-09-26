@@ -32,7 +32,7 @@ class Map01 extends Blueprint {
   }
 
   public function items(): array {
-    return [];
+    return [new Potion()];
   }
 
   public function monsters(): array {
