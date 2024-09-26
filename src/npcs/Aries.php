@@ -1,6 +1,6 @@
 <?php
 
-namespace Jugid\Staurie\Example\Npcs;
+namespace src\Npcs;
 
 use Jugid\Staurie\Example\Items\Shield;
 use Jugid\Staurie\Game\Npc;
