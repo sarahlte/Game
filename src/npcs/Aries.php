@@ -12,7 +12,7 @@ class Aries extends Npc {
     }
 
     public function description() : string {
-        return 'A man with his face hidden by his long white hair… A mysterious aura emanates from him.';
+        return 'A man with his face hidden by his long white hair… Big horns are adorning his head. A mysterious aura emanates from him.';
     }
 
     public function speak() : string|array {
