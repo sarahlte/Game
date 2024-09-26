@@ -7,7 +7,7 @@ use Jugid\Staurie\Game\Item_Equippable;
 class Knowledgebook extends Item_Equippable {
 
     public function name() : string {
-        return 'Book of knowledge';
+        return 'Knowledgebook';
     }
 
     public function description(): string
