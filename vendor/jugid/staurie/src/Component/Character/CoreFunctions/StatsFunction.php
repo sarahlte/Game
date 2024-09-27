@@ -7,7 +7,7 @@ use Jugid\Staurie\Component\Console\AbstractConsoleFunction;
 class StatsFunction extends AbstractConsoleFunction {
 
     public function action(array $args) : void {
-        $this->getContainer()->dispatcher()->dispatch('character.stats', ['type'=> $args[0], 'stat'=> $args[1]]);
+        $this->getContainer()->dispatcher()->dispatch('character.stats', ['type'=> $args[0], 'stat'=> $args[1], 'number'=> $args[2]]);
     }
 
     public function name() : string {
@@ -19,6 +19,6 @@ class StatsFunction extends AbstractConsoleFunction {
     }
 
     public function getArgs() : int|array {
-        return 2;
+        return 3;
     }
 }
