@@ -15,7 +15,7 @@ class Map06 extends Blueprint {
   }
 
   public function name(): string {
-    return 'path';
+    return 'Path continuation';
   }
 
   public function description(): string { 
