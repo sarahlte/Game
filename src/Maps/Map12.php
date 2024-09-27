@@ -4,6 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Rpg\Game\Monsters\Chompi;
 
 class Map12 extends Blueprint {
   private Position $position;
@@ -34,7 +35,7 @@ class Map12 extends Blueprint {
   }
 
   public function monsters(): array {
-    return [];
+    return [new Chompi()];
   }
 
 }
