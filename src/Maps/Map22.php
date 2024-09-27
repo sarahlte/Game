@@ -4,22 +4,21 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Rpg\Game\Npcs\Crow;
 
-class Map20 extends Blueprint {
+class Map22 extends Blueprint {
   private Position $position;
 
   public function __construct()
   {
-      $this->position = new Position(5,8);
+      $this->position = new Position(5,5);
   }
 
   public function name(): string {
-    return 'test ...';
+    return 'Forest\'s river';
   }
 
   public function description(): string { 
-    return 'A big tree stands in the middle of the clearing.';
+    return 'The river\'s noise is bothering you a bit here.';
   }
   
   public function position(): Position {
@@ -27,7 +26,7 @@ class Map20 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [new Crow()];
+    return [];
   }
 
   public function items(): array {
