@@ -7,7 +7,7 @@ use Rpg\Game\Items\Balloon;
 use Jugid\Staurie\Game\Npc;
 
 class Guide extends Npc {
-  private int $limitUse = 0;
+  private int $limitUse = 10;
 
   public function name() : string {
       return 'Guide';
@@ -28,7 +28,7 @@ class Guide extends Npc {
   }
 
   public function heal() : int {
-    return 0;
+    return 100;
   }
 
   public function healSpeak() : string|array {
