@@ -22,8 +22,8 @@ class Sword extends Item_Equippable {
     public function statistics(): array
     {
         return [
-            'chance'=> 2,
-            'wisdom'=> 2
+            'attack'=> 3,
+            'ability'=> 2
         ];
     }
 }

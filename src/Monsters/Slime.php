@@ -5,7 +5,7 @@ namespace Rpg\Game\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class Slime extends Monster {
-    private $life = 8;
+    private $life = 10;
 
     public function name() : string {
         return 'Slime';
