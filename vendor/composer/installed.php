@@ -3,7 +3,7 @@
         'name' => 'rpg/game',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '69d34d3bc593d74dbeeef5564ebf7a568bab790c',
+        'reference' => 'ce6d9c50e05bf440ff1a378084a52488890887f9',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'jugid/staurie' => array(
-            'pretty_version' => '1.1.0',
-            'version' => '1.1.0.0',
-            'reference' => 'b31baa2a363b626f257e98136d9b2c29a61468b0',
+            'pretty_version' => '1.1.2',
+            'version' => '1.1.2.0',
+            'reference' => 'a0a3c46d51b6e20797e9b9f9aa8cca14395ddd3f',
             'type' => 'library',
             'install_path' => __DIR__ . '/../jugid/staurie',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'rpg/game' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '69d34d3bc593d74dbeeef5564ebf7a568bab790c',
+            'reference' => 'ce6d9c50e05bf440ff1a378084a52488890887f9',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

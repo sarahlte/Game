@@ -6,12 +6,11 @@ use LogicException;
 
 class Statistics {
 
-    private array $statistics = [];
+    public array $statistics = [];
 
     public static function default() {
         $default_stats = new Statistics();
-        return $default_stats->addDefault('Health', 15)
-                             ->addDefault('chance', 0)
+        return $default_stats->addDefault('chance', 0)
                              ->addDefault('ability', 0)
                              ->addDefault('wisdom', 0)
                              ->addDefault('defense', 0);
