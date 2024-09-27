@@ -105,7 +105,7 @@ class MainCharacter extends AbstractComponent {
                 $this->unequip($arguments['item'], $arguments['body_part']);
                 break;
             case 'character.stats':
-                $this->stats($arguments['type'], $arguments['stat']);
+                $this->stats($arguments['type'], $arguments['stat'], $arguments['number']);
                 break;
             default:
                 $this->eventToAction($event);
@@ -288,7 +288,7 @@ class MainCharacter extends AbstractComponent {
         $pp->writeLn("This $item_name was not worthy !");
     }
 
-    private function stats(string $type, string $stat) : void {
+    private function stats(string $type, string $stat, int $number) : void {
         $pp = $this->container->getPrettyPrinter();
         $level = $this->container->getComponent('level');
 
@@ -298,9 +298,9 @@ class MainCharacter extends AbstractComponent {
 
         switch($type) {
             case 'add' :
-                if($level->points > 0) {
-                    $this->statistics->add($stat, 1);
-                    $level->points -= 1;
+                if($level->points >= $number) {
+                    $this->statistics->add($stat, $number);
+                    $level->points -= $number;
                     $pp->writeLn("One point added to $stat", 'green');
                     break;
                 }
