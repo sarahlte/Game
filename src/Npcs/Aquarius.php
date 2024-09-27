@@ -6,7 +6,7 @@ use Rpg\Game\Items\WaterVessel;
 use Jugid\Staurie\Game\Npc;
 
 class Aquarius extends Npc {
-    private int $limitUse;
+    private int $limitUse = 0;
 
     public function name() : string {
         return 'Aquarius';
