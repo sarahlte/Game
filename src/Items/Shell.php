@@ -12,7 +12,7 @@ class Shell extends Item_Equippable {
 
     public function description(): string
     {
-        return 'Grants you +15 in defense.';
+        return 'Shoulder pads that protect you and grant you some strength';
     }
 
     public function body_part(): string { 
@@ -22,8 +22,8 @@ class Shell extends Item_Equippable {
     public function statistics(): array
     {
         return [
-            'defense'=> 15,
-            'slippery'=> 50
+            'defense'=> 20,
+            'attack'=> 15
         ];
     }
 }
