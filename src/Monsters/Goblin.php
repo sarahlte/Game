@@ -43,11 +43,9 @@ class Goblin extends Monster {
     {
         return 2;
     }
-    public function getLife(): int
+    public function getLife($damage): int
     {
         return 10;
     }
-    public function fight(): array {
-        return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];
-    }
+
 }
