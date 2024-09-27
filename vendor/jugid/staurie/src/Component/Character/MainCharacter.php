@@ -212,10 +212,10 @@ class MainCharacter extends AbstractComponent {
         if(null !== $npc && $npc instanceof Npc) {
             if ($npc->heal() > 0 && $npc->getLimitUse() > 0) {
                 $dialog = $npc->healSpeak();
-                $pv = $npc->heal();
+                $hp = $npc->heal();
                 $this->printNpcDialog($npc_name, $dialog);
-                $this->statistics->add('health', $pv);
-                $pp->writeLn('You gained '.$pv.' pv !', 'green');
+                $this->statistics->add('health', $hp);
+                $pp->writeLn('You gained '.$hp.' hp !', 'green');
                 $npc->setLimitUse();   
             } else {
                 $pp->writeLn('This Npc can\'t heal you.', 'red');
