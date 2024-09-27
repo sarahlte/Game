@@ -32,7 +32,7 @@ class Kobold extends Monster {
 
     public function skills(): array { 
         return [
-            'Claw Strike' => 15,
+            'Claw Strike' => 5,
         ];
     }
 }

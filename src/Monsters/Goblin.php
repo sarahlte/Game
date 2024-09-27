@@ -32,7 +32,7 @@ class Goblin extends Monster {
 
     public function skills(): array { 
         return [
-            'Charge' => 10,
+            'Charge' => 2,
         ];
     }
 }
