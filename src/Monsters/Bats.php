@@ -19,7 +19,7 @@ class Bats extends Monster {
     }
 
     public function health_points(): int { 
-        return 30;
+        return 20;
     }
 
     public function defense(): int { 
@@ -34,5 +34,20 @@ class Bats extends Monster {
         return [
             'Bite' => 6,
         ];
+    }
+    public function getAttack(): int
+    {
+        return 6;
+    }
+    public function getDefense(): int
+    {
+        return 4;
+    }
+    public function getLife(): int
+    {
+        return 20;
+    }
+    public function fight(): array {
+        return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];
     }
 }

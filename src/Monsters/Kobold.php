@@ -19,7 +19,7 @@ class Kobold extends Monster {
     }
 
     public function health_points(): int { 
-        return 20;
+        return 15;
     }
 
     public function defense(): int { 
@@ -39,15 +39,15 @@ class Kobold extends Monster {
 
     public function getAttack(): int
     {
-        return 15;
+        return 3;
     }
     public function getDefense(): int
     {
-        return 5;
+        return 3;
     }
     public function getLife(): int
     {
-        return 1;
+        return 15;
     }
     public function fight(): array {
         return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];

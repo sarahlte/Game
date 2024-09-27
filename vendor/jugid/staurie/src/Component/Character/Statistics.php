@@ -10,9 +10,10 @@ class Statistics {
 
     public static function default() {
         $default_stats = new Statistics();
-        return $default_stats->addDefault('chance', 0)
+        return $default_stats->addDefault('attack', 3)
+                             ->addDefault('health', 15)
+                             ->addDefault('chance', 0)
                              ->addDefault('ability', 0)
-                             ->addDefault('wisdom', 0)
                              ->addDefault('defense', 0);
     }
 
