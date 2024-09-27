@@ -47,6 +47,8 @@ class Level extends AbstractComponent {
         }
     }
 
+    
+
     final protected function view() {
         $pp = $this->container->getPrettyPrinter();
         $pp->writeLn('Level : ' . $this->level . '/' . $this->config['max_level']);
@@ -54,6 +56,14 @@ class Level extends AbstractComponent {
         $pp->writeln($this->points, $this->points > 0 ? 'green': null);
         $pp->writeProgressbar($this->experience, 0, $this->getExperienceForCurrentLevel());
     }
+
+    public function experienceUp($exp): void {
+        $this->experience += $exp;
+        if ($this->experience >= $this->getExperienceForCurrentLevel()) {
+            $this->up();
+        }
+    }
+
 
     private function getExperienceForCurrentLevel() : int {
         $formula = preg_replace('/\{level\}/', $this->level, $this->config['formula']);
