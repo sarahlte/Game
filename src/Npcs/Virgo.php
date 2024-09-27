@@ -6,7 +6,7 @@ use Rpg\Game\Items\Knowledgebook;
 use Jugid\Staurie\Game\Npc;
 
 class Virgo extends Npc {
-    private int $limitUse;
+    private int $limitUse = 0;
 
     public function name() : string {
         return 'Virgo';

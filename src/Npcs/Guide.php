@@ -7,7 +7,7 @@ use Rpg\Game\Items\Balloon;
 use Jugid\Staurie\Game\Npc;
 
 class Guide extends Npc {
-  private int $limitUse;
+  private int $limitUse = 0;
 
   public function name() : string {
       return 'Guide';

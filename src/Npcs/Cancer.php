@@ -6,7 +6,7 @@ use Rpg\Game\Items\Shell;
 use Jugid\Staurie\Game\Npc;
 
 class Cancer extends Npc {
-    private int $limitUse;
+    private int $limitUse = 0;
 
     public function name() : string {
         return 'Cancer';

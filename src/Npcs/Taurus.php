@@ -6,7 +6,7 @@ use Rpg\Game\Items\HornedShield;
 use Jugid\Staurie\Game\Npc;
 
 class Taurus extends Npc {
-    private int $limitUse;
+    private int $limitUse = 0;
 
     public function name() : string {
         return 'Taurus';

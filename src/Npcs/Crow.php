@@ -6,7 +6,7 @@ use Rpg\Game\Items\Riddle;
 use Jugid\Staurie\Game\Npc;
 
 class Crow extends Npc {
-  private int $limitUse;
+  private int $limitUse = 0;
 
     public function name() : string {
         return 'Crow';

@@ -6,7 +6,7 @@ use Rpg\Game\Items\Shield;
 use Jugid\Staurie\Game\Npc;
 
 class Aries extends Npc {
-    private int $limitUse;
+    private int $limitUse = 0;
 
     public function name() : string {
         return 'Aries';
