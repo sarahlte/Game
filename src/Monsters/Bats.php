@@ -43,11 +43,9 @@ class Bats extends Monster {
     {
         return 4;
     }
-    public function getLife(): int
+    public function getLife($damage): int
     {
         return 20;
     }
-    public function fight(): array {
-        return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];
-    }
+
 }

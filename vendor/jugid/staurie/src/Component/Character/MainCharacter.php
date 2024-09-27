@@ -167,12 +167,18 @@ class MainCharacter extends AbstractComponent {
         if(null !== $monster && $monster instanceof Monster) {
             //$dialog = $monster->speak();
             //$this->printNpcDialog($monster_name, $dialog);
-            $damage = $monster->getAttack();
+            $damage = $monster->getAttack() - $this->statistics->value('defense');
             $pp->writeLn('You got '.$damage.' damage.', 'red');
-            $this->statistics->add('Health', -$damage);
-            $monster_damage = $this->statistics->value('Attack');
+            $this->statistics->add('health', -$damage);
+            $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
+            $monster_life = $monster->getLife($monster_damage);
+            if ($monster->life <= 0){
+                $pp->writeLn('You dealed '.$damage.' damage to '.$monster->name().'. You killed them !', 'red');
+            } else {
+                $pp->writeLn('You dealed '.$damage.' damage to '.$monster->name().'.', 'red');
+            }
         } else {
-            $pp->writeLn('You are probably fighting to a ghost', 'red');
+            $pp->writeLn('You are probably fighting a ghost', 'red');
         }
     }
 
