@@ -6,7 +6,7 @@ use Rpg\Game\Items\Shell;
 use Jugid\Staurie\Game\Npc;
 
 class Cancer extends Npc {
-    public int $limitUse;
+    private int $limitUse;
 
     public function name() : string {
         return 'Cancer';
@@ -31,6 +31,12 @@ class Cancer extends Npc {
     public function healSpeak() : string|array {
         return [];
     }
+
+    public function getLimitUse() : int
+    {
+        return $this->limitUse;
+    }
+
     public function setLimitUse() : void {
         $this->limitUse -= 1;
     }

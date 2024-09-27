@@ -32,6 +32,11 @@ class Aquarius extends Npc {
         return [];
     }
 
+    public function getLimitUse() : int
+    {
+        return $this->limitUse;
+    }
+
     public function setLimitUse() : void {
         $this->limitUse -= 1;
     }

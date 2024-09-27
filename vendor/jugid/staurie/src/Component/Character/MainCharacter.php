@@ -210,7 +210,7 @@ class MainCharacter extends AbstractComponent {
         $npc = $this->container->getMap()->getCurrentBlueprint()->getNpc($npc_name);
 
         if(null !== $npc && $npc instanceof Npc) {
-            if ($npc->heal() > 0 && $npc->limitUse > 0) {
+            if ($npc->heal() > 0 && $npc->getLimitUse() > 0) {
                 $dialog = $npc->healSpeak();
                 $pv = $npc->heal();
                 $this->printNpcDialog($npc_name, $dialog);
