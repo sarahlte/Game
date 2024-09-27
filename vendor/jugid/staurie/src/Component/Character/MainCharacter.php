@@ -174,22 +174,26 @@ class MainCharacter extends AbstractComponent {
             }
             $pp->writeLn('You got '.$damage.' damage.', 'red');
             $this->statistics->add('health', -$damage);
-            if ($this->statistics->value('attack') - $monster->getDefense() > 0){
-                $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
+            if($this->statistics->value('health') <= 0) {
+                $pp->writeLn('You\'ve been killed !!', 'red');
+                sleep(3);
+                $this->container->state()->stop();
             } else {
-                $monster_damage = 0;
+                if ($this->statistics->value('attack') - $monster->getDefense() > 0){
+                    $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
+                } else {
+                    $monster_damage = 0;
+                }
+                $monster_life = $monster->getLife($monster_damage);
+                $level = $this->container->getComponent('level');
+                if ($monster->health_points() <= 0){
+                    $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'. You killed them !', 'red');
+                    $pp->writeLn('You gained '.$monster->experience().' exp !', 'green');
+                    $level->experienceUp($monster->experience());
+                } else {
+                    $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'.', 'red');
+                }
             }
-            $monster_life = $monster->getLife($monster_damage);
-            $level = $this->container->getComponent('level');
-            if ($monster->health_points() <= 0){
-                $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'. You killed them !', 'red');
-                $pp->writeLn('You gained '.$monster->experience().' exp !', 'green');
-                $level->experienceUp($monster->experience());
-            } else {
-                $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'.', 'red');
-            }
-            $pp->writeLn('You gained '.$monster->experience().' exp !', 'green');
-            $level->experienceUp($monster->experience());
         } else {
             $pp->writeLn('You are probably fighting a ghost', 'red');
         }
