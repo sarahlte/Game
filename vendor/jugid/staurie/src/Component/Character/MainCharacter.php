@@ -167,7 +167,11 @@ class MainCharacter extends AbstractComponent {
         if(null !== $monster && $monster instanceof Monster) {
             //$dialog = $monster->speak();
             //$this->printNpcDialog($monster_name, $dialog);
-            $damage = $monster->getAttack() - $this->statistics->value('defense');
+            if ($monster->getAttack() - $this->statistics->value('defense') > 0){
+                $damage = $monster->getAttack() - $this->statistics->value('defense');
+            } else { 
+                $damage = 0;
+            }
             $pp->writeLn('You got '.$damage.' damage.', 'red');
             $this->statistics->add('health', -$damage);
             if ($this->statistics->value('attack') - $monster->getDefense() > 0){
