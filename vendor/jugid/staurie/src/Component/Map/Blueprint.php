@@ -5,10 +5,12 @@ namespace Jugid\Staurie\Component\Map;
 use Jugid\Staurie\Container;
 use Jugid\Staurie\Game\Item;
 use Jugid\Staurie\Game\Npc;
+use Jugid\Staurie\Game\Monster;
 use Jugid\Staurie\Interface\Containerable;
 use Jugid\Staurie\Interface\Describable;
 use Jugid\Staurie\Interface\Initializable;
 use Jugid\Staurie\Interface\Positionnable;
+use Jugid\Staurie\Interface\Speakable;
 
 abstract class Blueprint implements Containerable, Initializable, Describable, Positionnable {
 
@@ -53,8 +55,20 @@ abstract class Blueprint implements Containerable, Initializable, Describable, P
         return $this->npcs[$npc_name];
     }
 
+    public function getMonster(string $monster_name) : ?Monster{
+        if(!$this->hasMonster($monster_name)) {
+            return null;
+        }
+
+        return $this->monsters[$monster_name];
+    }
+
     private function hasNpc(string $npc_name) : bool {
         return isset($this->npcs[$npc_name]);
+    }
+
+    private function hasMonster(string $monster_name) : bool {
+        return isset($this->monsters[$monster_name]);
     }
 
     public function takeItem(string $item_name) : ?Item{

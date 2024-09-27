@@ -35,4 +35,19 @@ class Goblin extends Monster {
             'Charge' => 10,
         ];
     }
+    public function getAttack(): int
+    {
+        return 15;
+    }
+    public function getDefense(): int
+    {
+        return 5;
+    }
+    public function getLife(): int
+    {
+        return 1;
+    }
+    public function fight(): array {
+        return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];
+    }
 }

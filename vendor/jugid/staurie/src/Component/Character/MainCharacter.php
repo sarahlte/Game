@@ -6,6 +6,7 @@ use Jugid\Staurie\Component\AbstractComponent;
 use Jugid\Staurie\Component\Character\CoreFunctions\EquipFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\MainCharacterFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\SpeakFunction;
+use Jugid\Staurie\Component\Character\CoreFunctions\FightFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\StatsFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\UnequipFunction;
 use Jugid\Staurie\Component\Inventory\Inventory;
@@ -14,6 +15,7 @@ use Jugid\Staurie\Component\Map\Map;
 use Jugid\Staurie\Component\PrettyPrinter\PrettyPrinter;
 use Jugid\Staurie\Game\Item_Equippable;
 use Jugid\Staurie\Game\Npc;
+use Jugid\Staurie\Game\Monster;
 use LogicException;
 
 class MainCharacter extends AbstractComponent {
@@ -35,6 +37,7 @@ class MainCharacter extends AbstractComponent {
 
         if($this->container->isComponentRegistered(Map::class)) {
             array_push($events, 'character.speak');
+            array_push($events, 'character.fight');
         }
 
         if($this->container->isComponentRegistered(Inventory::class)) {
@@ -59,6 +62,7 @@ class MainCharacter extends AbstractComponent {
 
         if($this->container->isComponentRegistered(Map::class)) {
             $console->addFunction(new SpeakFunction());
+            $console->addFunction(new FightFunction());
         }
 
         if($this->container->isComponentRegistered(Inventory::class)) {
@@ -82,6 +86,9 @@ class MainCharacter extends AbstractComponent {
         switch($event) {
             case 'character.speak':
                 $this->speak($arguments['to']);
+                break;
+            case 'character.fight':
+                $this->fight($arguments['to']);
                 break;
             case 'character.equip':
                 $this->equip($arguments['item'], $arguments['body_part']);
@@ -150,6 +157,21 @@ class MainCharacter extends AbstractComponent {
             $this->printNpcDialog($npc_name, $dialog);
         } else {
             $pp->writeLn('You are probably talking to a ghost', 'red');
+        }
+    }
+
+    private function fight(string $monster_name) {
+        $pp = $this->container->getPrettyPrinter();
+        $monster = $this->container->getMap()->getCurrentBlueprint()->getMonster($monster_name);
+
+        if(null !== $monster && $monster instanceof Monster) {
+            //$dialog = $monster->speak();
+            //$this->printNpcDialog($monster_name, $dialog);
+            $damage = $monster->getAttack();
+            $pp->writeLn('You got '.$damage.' damage.', 'red');
+            $this->statistics->add('Health', -$damage);
+        } else {
+            $pp->writeLn('You are probably fighting to a ghost', 'red');
         }
     }
 

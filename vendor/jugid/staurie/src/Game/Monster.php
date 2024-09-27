@@ -7,8 +7,9 @@ use Jugid\Staurie\Interface\Containerable;
 use Jugid\Staurie\Interface\Describable;
 use Jugid\Staurie\Interface\Fightable;
 use Jugid\Staurie\Interface\Nameable;
+use Jugid\Staurie\Interface\Speakable;
 
-abstract class Monster implements Containerable, Describable {
+abstract class Monster implements Containerable, Describable, Fightable {
 
     private Container $container;
 
