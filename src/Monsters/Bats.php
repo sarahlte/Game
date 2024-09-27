@@ -20,7 +20,7 @@ class Bats extends Monster {
     }
 
     public function health_points(): int { 
-        return 20;
+        return $this->life;
     }
 
     public function defense(): int { 

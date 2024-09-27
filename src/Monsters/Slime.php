@@ -20,7 +20,7 @@ class Slime extends Monster {
     }
 
     public function health_points(): int { 
-        return 8;
+        return $this->life;
     }
 
     public function defense(): int { 
