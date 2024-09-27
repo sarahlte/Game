@@ -15,8 +15,17 @@ class Healer extends Npc {
     }
 
     public function speak() : string|array {
-        return ['Hello, traveler. You must be tired, right ? Here, let me help.', 
-        '(you gained +10 health)'];
+        return [];
     }
+
+    public function heal() : int {
+        return 10;
+    }
+
+    public function healSpeak() : string|array {
+        return ['Hello, traveler. You must be tired, right ? Here, let me help.'];
+    }
+
+    
 
 }
