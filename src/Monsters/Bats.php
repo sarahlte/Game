@@ -5,6 +5,7 @@ namespace Rpg\Game\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class Bats extends Monster {
+    private $life = 20;
 
     public function name() : string {
         return 'Bats';
@@ -48,4 +49,7 @@ class Bats extends Monster {
         return 20;
     }
 
+    public function fight() : array {
+        return [];
+    }
 }

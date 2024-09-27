@@ -5,8 +5,8 @@ namespace Rpg\Game\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class Goblin extends Monster {
-
     private $life = 10;
+
     public function name() : string {
         return 'Goblin';
     }
@@ -50,4 +50,7 @@ class Goblin extends Monster {
         return $this->life;
     }
 
+    public function fight() : array {
+        return [];
+    }
 }

@@ -5,6 +5,7 @@ namespace src\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class Fluffy extends Monster {
+    private $life = 5000;
 
     public function name() : string {
         return 'Fluffy';
@@ -48,4 +49,7 @@ class Fluffy extends Monster {
         return 5000;
     }
 
+    public function fight() : array {
+        return [];
+    }
 }
