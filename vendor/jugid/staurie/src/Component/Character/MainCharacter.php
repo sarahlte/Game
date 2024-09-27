@@ -210,12 +210,13 @@ class MainCharacter extends AbstractComponent {
         $npc = $this->container->getMap()->getCurrentBlueprint()->getNpc($npc_name);
 
         if(null !== $npc && $npc instanceof Npc) {
-            if ($npc->heal() > 0 && $npc->limitUse() > 0) {
+            if ($npc->heal() > 0 && $npc->limitUse > 0) {
                 $dialog = $npc->healSpeak();
                 $pv = $npc->heal();
                 $this->printNpcDialog($npc_name, $dialog);
                 $this->statistics->add('health', $pv);
-                $pp->writeLn('You gained '.$pv.' pv !', 'green');    
+                $pp->writeLn('You gained '.$pv.' pv !', 'green');
+                $npc->setLimitUse();   
             } else {
                 $pp->writeLn('This Npc can\'t heal you.', 'red');
             }

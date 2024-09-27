@@ -6,7 +6,8 @@ use Rpg\Game\Items\Knowledgebook;
 use Jugid\Staurie\Game\Npc;
 
 class Virgo extends Npc {
-    
+    public int $limitUse;
+
     public function name() : string {
         return 'Virgo';
     }
@@ -30,8 +31,8 @@ class Virgo extends Npc {
         return [];
     }
 
-    public function limitUse() : int {
-        return 0;
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;
     }
     
 

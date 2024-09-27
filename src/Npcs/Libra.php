@@ -6,7 +6,8 @@ use Rpg\Game\Items\BalanceScales;
 use Jugid\Staurie\Game\Npc;
 
 class Libra extends Npc {
-    
+    public int $limitUse;
+
     public function name() : string {
         return 'Libra';
     }
@@ -31,9 +32,8 @@ class Libra extends Npc {
         return [];
     }
 
-    public function limitUse() : int {
-        return 0;
-    }
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;    }
 
 
 }

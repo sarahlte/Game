@@ -6,7 +6,8 @@ use Rpg\Game\Items\MagicHorn;
 use Jugid\Staurie\Game\Npc;
 
 class Capricorn extends Npc {
-    
+    public int $limitUse;
+
     public function name() : string {
         return 'Capricorn';
     }
@@ -30,8 +31,8 @@ class Capricorn extends Npc {
     public function healSpeak() : string|array {
         return [];
     }
-    public function limitUse() : int {
-        return 0;
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;
     }
 
 

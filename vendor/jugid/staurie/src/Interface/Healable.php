@@ -7,6 +7,6 @@ interface Healable {
 
     public function healSpeak() : string|array;
 
-    public function limitUse() : int;
-    
+    public function setLimitUse() : void;
+
 }

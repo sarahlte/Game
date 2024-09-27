@@ -6,7 +6,8 @@ use Rpg\Game\Items\WaterVessel;
 use Jugid\Staurie\Game\Npc;
 
 class Aquarius extends Npc {
-    
+    private int $limitUse;
+
     public function name() : string {
         return 'Aquarius';
     }
@@ -22,17 +23,17 @@ class Aquarius extends Npc {
         '(as you take it, the figure vanishes into mist, leaving behind the vessel as a gift for your journey)'];
     }
 
-    
-  public function heal() : int {
-    return 0;
-  }
+        
+    public function heal() : int {
+        return 0;
+    }
 
-  public function healSpeak() : string|array {
-      return [];
-  }
+    public function healSpeak() : string|array {
+        return [];
+    }
 
-  public function limitUse() : int {
-    return 0;
-}
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;
+    }
 
 }

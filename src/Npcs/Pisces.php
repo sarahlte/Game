@@ -6,7 +6,8 @@ use Rpg\Game\Items\MysticFishScale;
 use Jugid\Staurie\Game\Npc;
 
 class Pisces extends Npc {
-    
+    public int $limitUse;
+
     public function name() : string {
         return 'Pisces';
     }
@@ -30,9 +31,8 @@ class Pisces extends Npc {
         return [];
     }
 
-    public function limitUse() : int {
-        return 0;
-    }
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;    }
 
 
 }

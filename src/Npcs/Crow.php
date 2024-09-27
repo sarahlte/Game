@@ -6,7 +6,8 @@ use Rpg\Game\Items\Riddle;
 use Jugid\Staurie\Game\Npc;
 
 class Crow extends Npc {
-    
+  public int $limitUse;
+
     public function name() : string {
         return 'Crow';
     }
@@ -36,8 +37,8 @@ class Crow extends Npc {
         return [];
     }
 
-    public function limitUse() : int {
-      return 0;
+    public function setLimitUse() : void {
+      $this->limitUse -= 1;
   }
 
 

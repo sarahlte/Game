@@ -6,7 +6,8 @@ use Rpg\Game\Items\Bow;
 use Jugid\Staurie\Game\Npc;
 
 class Sagittarius extends Npc {
-    
+    public int $limitUse;
+
     public function name() : string {
         return 'Sagittarius';
     }
@@ -29,9 +30,8 @@ class Sagittarius extends Npc {
         return [];
     }
     
-    public function limitUse() : int {
-        return 0;
-    }
+    public function setLimitUse() : void {
+        $this->limitUse -= 1;    }
 
 
 }
