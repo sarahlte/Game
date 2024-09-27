@@ -5,7 +5,7 @@ namespace Rpg\Game\Npcs;
 use Jugid\Staurie\Game\Npc;
 
 class Healer extends Npc {
-    public int $limitUse;
+    private int $limitUse;
 
     public function name() : string {
         return 'Healer';
