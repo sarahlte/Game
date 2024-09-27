@@ -169,7 +169,7 @@ class MainCharacter extends AbstractComponent {
             //$this->printNpcDialog($monster_name, $dialog);
             $damage = $monster->getAttack();
             $pp->writeLn('You got '.$damage.' damage.', 'red');
-            $this->statistics->add('Health', -$damage);
+            $this->statistics->add('health', -$damage);
         } else {
             $pp->writeLn('You are probably fighting to a ghost', 'red');
         }
