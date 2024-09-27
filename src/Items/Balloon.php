@@ -25,7 +25,7 @@ class Balloon extends Item_Equippable {
             'attack'=> 9999,
             'health'=>9999,
             'wisdom'=> 9999,
-            'defense'=>9999
+            'defense'=>10
         ];
     }
 }

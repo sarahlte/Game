@@ -45,7 +45,7 @@ class Goblin extends Monster {
         return 2;
     }
     public function getLife($damage): int
-    {
+    {   
         $this->life -= $damage;
         return $this->life;
     }

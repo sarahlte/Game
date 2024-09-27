@@ -10,11 +10,11 @@ class Map20 extends Blueprint {
 
   public function __construct()
   {
-      $this->position = new Position(5,8);
+      $this->position = new Position(5,10);
   }
 
   public function name(): string {
-    return 'Forest ...';
+    return 'test ...';
   }
 
   public function description(): string { 
