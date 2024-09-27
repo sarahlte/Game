@@ -4,19 +4,19 @@ namespace Rpg\Game\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 
-class Goblin extends Monster {
-    private $life = 2;
+class Chompi extends Monster {
+    private $life = 30;
 
     public function name() : string {
-        return 'Goblin';
+        return 'Chompi';
     }
 
     public function description(): string { 
-        return 'This a vile monster that does not hesitate to harm everything in its path, and its also the weakest monster';
+        return 'A vile mushroom that may poison you if you are not wary of it';
     }
 
     public function level() : int {
-        return 1;
+        return 5;
     }
 
     public function health_points(): int { 
@@ -24,28 +24,28 @@ class Goblin extends Monster {
     }
 
     public function defense(): int { 
-        return 2;
+        return 5;
     }
 
     public function experience(): int { 
-        return 15;
+        return 75;
     }
 
     public function skills(): array { 
         return [
-            'Charge' => 2,
+            'Spore' => 7,
         ];
     }
     public function getAttack(): int
     {
-        return 2;
+        return 7;
     }
     public function getDefense(): int
     {
-        return 2;
+        return 5;
     }
     public function getLife($damage): int
-    {   
+    {
         $this->life -= $damage;
         return $this->life;
     }
