@@ -6,6 +6,7 @@ use Jugid\Staurie\Game\Monster;
 
 class Goblin extends Monster {
 
+    private $life = 10;
     public function name() : string {
         return 'Goblin';
     }
@@ -19,7 +20,7 @@ class Goblin extends Monster {
     }
 
     public function health_points(): int { 
-        return 10;
+        return $this->life;
     }
 
     public function defense(): int { 
@@ -45,7 +46,8 @@ class Goblin extends Monster {
     }
     public function getLife($damage): int
     {
-        return 10;
+        $this->life -= $damage;
+        return $this->life;
     }
 
 }

@@ -172,7 +172,7 @@ class MainCharacter extends AbstractComponent {
             $this->statistics->add('health', -$damage);
             $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
             $monster_life = $monster->getLife($monster_damage);
-            if ($monster->life <= 0){
+            if ($monster->health_points() <= 0){
                 $pp->writeLn('You dealed '.$damage.' damage to '.$monster->name().'. You killed them !', 'red');
             } else {
                 $pp->writeLn('You dealed '.$damage.' damage to '.$monster->name().'.', 'red');
