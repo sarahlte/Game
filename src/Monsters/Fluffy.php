@@ -37,15 +37,15 @@ class Fluffy extends Monster {
     }
     public function getAttack(): int
     {
-        return 15;
+        return 1000;
     }
     public function getDefense(): int
     {
-        return 5;
+        return 100;
     }
     public function getLife(): int
     {
-        return 1;
+        return 5000;
     }
     public function fight(): array {
         return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];

@@ -19,7 +19,7 @@ class Goblin extends Monster {
     }
 
     public function health_points(): int { 
-        return 15;
+        return 10;
     }
 
     public function defense(): int { 
@@ -37,15 +37,15 @@ class Goblin extends Monster {
     }
     public function getAttack(): int
     {
-        return 15;
+        return 2;
     }
     public function getDefense(): int
     {
-        return 5;
+        return 2;
     }
     public function getLife(): int
     {
-        return 1;
+        return 10;
     }
     public function fight(): array {
         return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];

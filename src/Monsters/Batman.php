@@ -35,4 +35,20 @@ class Batman extends Monster {
             'Sucking' => 10,
         ];
     }
+    public function getAttack(): int
+    {
+        return 10;
+    }
+    public function getDefense(): int
+    {
+        return 2;
+    }
+    public function getLife(): int
+    {
+        return 100;
+    }
+    public function fight(): array {
+        return ['attack'=>$this->getAttack(), 'defense'=>$this->getDefense(), 'life'=>$this->getLife()];
+    }
+
 }
