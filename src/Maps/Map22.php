@@ -4,6 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Rpg\Game\Monsters\IronSlime;
 
 class Map22 extends Blueprint {
   private Position $position;
@@ -34,7 +35,7 @@ class Map22 extends Blueprint {
   }
 
   public function monsters(): array {
-    return [];
+    return [new IronSlime()];
   }
 
 }
