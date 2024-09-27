@@ -4,6 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Rpg\Game\Npcs\Crow;
 
 class Map20 extends Blueprint {
   private Position $position;
@@ -26,7 +27,7 @@ class Map20 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Crow()];
   }
 
   public function items(): array {
