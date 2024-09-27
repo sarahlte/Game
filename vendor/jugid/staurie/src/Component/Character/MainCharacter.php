@@ -7,6 +7,7 @@ use Jugid\Staurie\Component\Character\CoreFunctions\EquipFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\MainCharacterFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\SpeakFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\FightFunction;
+use Jugid\Staurie\Component\Character\CoreFunctions\HealFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\StatsFunction;
 use Jugid\Staurie\Component\Character\CoreFunctions\UnequipFunction;
 use Jugid\Staurie\Component\Inventory\Inventory;
@@ -38,6 +39,8 @@ class MainCharacter extends AbstractComponent {
         if($this->container->isComponentRegistered(Map::class)) {
             array_push($events, 'character.speak');
             array_push($events, 'character.fight');
+            array_push($events, 'character.heal');
+
         }
 
         if($this->container->isComponentRegistered(Inventory::class)) {
@@ -63,6 +66,8 @@ class MainCharacter extends AbstractComponent {
         if($this->container->isComponentRegistered(Map::class)) {
             $console->addFunction(new SpeakFunction());
             $console->addFunction(new FightFunction());
+            $console->addFunction(new HealFunction());
+
         }
 
         if($this->container->isComponentRegistered(Inventory::class)) {
@@ -89,6 +94,9 @@ class MainCharacter extends AbstractComponent {
                 break;
             case 'character.fight':
                 $this->fight($arguments['to']);
+                break;
+            case 'character.heal':
+                $this->heal($arguments['by']);
                 break;
             case 'character.equip':
                 $this->equip($arguments['item'], $arguments['body_part']);
@@ -179,11 +187,10 @@ class MainCharacter extends AbstractComponent {
                 sleep(3);
                 $this->container->state()->stop();
             } else {
+                $monster_damage = 0;
                 if ($this->statistics->value('attack') - $monster->getDefense() > 0){
                     $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
-                } else {
-                    $monster_damage = 0;
-                }
+                } 
                 $monster_life = $monster->getLife($monster_damage);
                 $level = $this->container->getComponent('level');
                 if ($monster->health_points() <= 0){
@@ -197,6 +204,25 @@ class MainCharacter extends AbstractComponent {
         } else {
             $pp->writeLn('You are probably fighting a ghost', 'red');
         }
+    }
+    private function heal(string $npc_name) {
+        $pp = $this->container->getPrettyPrinter();
+        $npc = $this->container->getMap()->getCurrentBlueprint()->getNpc($npc_name);
+
+        if(null !== $npc && $npc instanceof Npc) {
+            if ($npc->heal() > 0) {
+                $dialog = $npc->healSpeak();
+                $pv = $npc->heal();
+                $this->printNpcDialog($npc_name, $dialog);
+                $this->statistics->add('health', $pv);
+                $pp->writeLn('You gained '.$pv.' pv !', 'green');    
+            } else {
+                $pp->writeLn('This Npc can\'t heal you.', 'red');
+            }
+        } else {
+            $pp->writeLn('You are probably with a ghost', 'red');
+        }
+
     }
 
     private function equip(string $item_name, string $body_part) {

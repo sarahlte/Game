@@ -22,4 +22,13 @@ class Aquarius extends Npc {
         '(as you take it, the figure vanishes into mist, leaving behind the vessel as a gift for your journey)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }
