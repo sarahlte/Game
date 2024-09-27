@@ -170,8 +170,7 @@ class MainCharacter extends AbstractComponent {
             $damage = $monster->getAttack();
             $pp->writeLn('You got '.$damage.' damage.', 'red');
             $this->statistics->add('health', -$damage);
-            $this->statistics->add('Health', -$damage);
-            $monster_damage = $this->statistics->value('Attack');
+            $monster_damage = $this->statistics->value('attack');
         } else {
             $pp->writeLn('You are probably fighting to a ghost', 'red');
         }
