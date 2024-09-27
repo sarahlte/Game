@@ -20,7 +20,7 @@ class Fluffy extends Monster {
     }
 
     public function health_points(): int { 
-        return 5000;
+        return $this->life;
     }
 
     public function defense(): int { 
