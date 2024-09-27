@@ -176,7 +176,7 @@ class MainCharacter extends AbstractComponent {
             $this->statistics->add('health', -$damage);
             if($this->statistics->value('health') <= 0) {
                 $pp->writeLn('You\'ve been killed !!', 'red');
-                sleep(30);
+                sleep(5);
                 $this->container->state()->stop();
             } else {
                 if ($this->statistics->value('attack') - $monster->getDefense() > 0){
