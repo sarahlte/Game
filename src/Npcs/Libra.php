@@ -22,4 +22,13 @@ class Libra extends Npc {
         'Take these scales, a symbol of balance. Use them to weigh your decisions carefully, for every choice bears a consequence.'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

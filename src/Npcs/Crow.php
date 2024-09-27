@@ -28,4 +28,13 @@ class Crow extends Npc {
         }
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

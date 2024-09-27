@@ -22,4 +22,13 @@ class Leo extends Npc {
         'Take this, "King\'s Roar", a sword forged in the heart of the sun. Wield it with honor, or not at all.'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }
