@@ -23,4 +23,13 @@ class Scorpio extends Npc {
         '(their voice is low, filled with an air of mystery and hidden intent.)',
         'Here, take this Poison Dagger. It strikes swiftly and leaves a lasting mark,'];
     }
-  }
+    
+    public function heal() : int {
+        return 0;
+    }
+
+    public function healSpeak() : string|array {
+        return [];
+    }
+    
+}

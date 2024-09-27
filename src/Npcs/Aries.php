@@ -22,4 +22,13 @@ class Aries extends Npc {
         '(not understanding a thing, you choose to take the shield and continue on your adventure)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

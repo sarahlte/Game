@@ -21,4 +21,13 @@ class Sagittarius extends Npc {
         '(the big hands of the man handle you a golden bow.)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

@@ -22,4 +22,12 @@ class Virgo extends Npc {
         'Take this sacred KnowledgeBook, known to help you in your adventure. Use it wisely on your journey.'];
     }
 
+    public function heal() : int {
+        return 0;
+    }
+
+    public function healSpeak() : string|array {
+        return [];
+    }
+
 }

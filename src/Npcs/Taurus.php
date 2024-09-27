@@ -21,5 +21,13 @@ class Taurus extends Npc {
         '(the creature speaks in a deep, resonant voice that echoes through the clearing.)',
         '(it offers you a sturdy shield, a token of its protection.)'];
     }
+    
+    public function heal() : int {
+        return 0;
+    }
+
+    public function healSpeak() : string|array {
+        return [];
+    }
 
 }

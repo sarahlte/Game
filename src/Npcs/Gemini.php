@@ -22,4 +22,13 @@ class Gemini extends Npc {
         '(they hand you a finely crafted twins dagger, symbolizing their sharpness and precision in battle.)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

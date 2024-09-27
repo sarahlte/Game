@@ -22,4 +22,13 @@ class Capricorn extends Npc {
         '(without saying more, he vanishes, leaving you with the horn and a deep sense of purpose)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

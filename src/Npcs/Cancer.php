@@ -22,4 +22,13 @@ class Cancer extends Npc {
         '(you take the shell, feeling its weight and the protection it might provide.)'];
     }
 
+    
+  public function heal() : int {
+    return 0;
+  }
+
+  public function healSpeak() : string|array {
+      return [];
+  }
+
 }

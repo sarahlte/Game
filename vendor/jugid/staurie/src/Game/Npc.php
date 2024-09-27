@@ -6,8 +6,9 @@ use Jugid\Staurie\Container;
 use Jugid\Staurie\Interface\Containerable;
 use Jugid\Staurie\Interface\Describable;
 use Jugid\Staurie\Interface\Speakable;
+use Jugid\Staurie\Interface\Healable;
 
-abstract class Npc implements Containerable, Describable, Speakable {
+abstract class Npc implements Containerable, Describable, Speakable, Healable {
     private Container $container;
 
     final public function setContainer(Container $container) : void {
