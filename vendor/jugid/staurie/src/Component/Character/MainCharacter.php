@@ -171,40 +171,67 @@ class MainCharacter extends AbstractComponent {
     private function fight(string $monster_name) {
         $pp = $this->container->getPrettyPrinter();
         $monster = $this->container->getMap()->getCurrentBlueprint()->getMonster($monster_name);
-
+    
         if(null !== $monster && $monster instanceof Monster) {
-            //$dialog = $monster->speak();
-            //$this->printNpcDialog($monster_name, $dialog);
-            if ($monster->getAttack() - $this->statistics->value('defense') > 0){
-                $damage = $monster->getAttack() - $this->statistics->value('defense');
-            } else { 
-                $damage = 0;
-            }
-            $pp->writeLn('You got '.$damage.' damage.', 'red');
-            $this->statistics->add('health', -$damage);
-            if($this->statistics->value('health') <= 0) {
-                $pp->writeLn('You\'ve been killed !!', 'red');
-                sleep(3);
-                $this->container->state()->stop();
-            } else {
+            $round = 1; 
+            $initial_player_health = $this->statistics->value('health'); 
+            $monster_max_health = $monster->health_points(); 
+            
+            while($this->statistics->value('health') > 0 && $monster->health_points() > 0) {
+
+                $pp->writeLn(str_repeat("-", 10) . " Round $round " . str_repeat("-", 10));
+                
+                if ($monster->getAttack() - $this->statistics->value('defense') > 0){
+                    $damage = $monster->getAttack() - $this->statistics->value('defense');
+                } else { 
+                    $damage = 0;
+                }
+                $pp->writeLn('You took '.$damage.' damage.', 'red');
+                $this->statistics->add('health', -$damage);
+    
+                if($this->statistics->value('health') <= 0) {
+                    $pp->writeLn('You have been killed !!', 'red');
+                    sleep(3);
+                    $this->container->state()->stop();
+                    return;
+                }
+
                 $monster_damage = 0;
                 if ($this->statistics->value('attack') - $monster->getDefense() > 0){
                     $monster_damage = $this->statistics->value('attack') - $monster->getDefense();
-                } 
-                $monster_life = $monster->getLife($monster_damage);
-                $level = $this->container->getComponent('level');
-                if ($monster->health_points() <= 0){
-                    $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'. You killed them !', 'red');
-                    $pp->writeLn('You gained '.$monster->experience().' exp !', 'green');
-                    $level->experienceUp($monster->experience());
-                } else {
-                    $pp->writeLn('You dealed '.$monster_damage.' damage to '.$monster->name().'.', 'red');
                 }
+                $monster->getLife($monster_damage);
+    
+                if ($monster->health_points() <= 0){
+                    $pp->writeLn('You dealt '.$monster_damage.' damage to '.$monster->name().'. You killed it!', 'green');
+                    $pp->writeLn('You gained '.$monster->experience().' exp!', 'green');
+                    $level = $this->container->getComponent('level');
+                    $level->experienceUp($monster->experience());
+
+                    $current_health = $this->statistics->value('health');
+                    $this->statistics->add('health', $initial_player_health-$current_health);
+                     
+                    $pp->writeLn('Your health has been restored to what it was before the fight!', 'green');
+    
+                    break;
+                } else {
+                    $pp->writeLn('You dealt '.$monster_damage.' damage to '.$monster->name().'.', 'red');
+                }
+    
+                $player_health_percentage = ($this->statistics->value('health') / $initial_player_health) * 100;
+                $monster_health_percentage = ($monster->health_points() / $monster_max_health) * 100;
+    
+                $pp->writeLn('Your health: ' . round($player_health_percentage) . '%', 'yellow');
+                $pp->writeLn($monster->name() . ' health: ' . round($monster_health_percentage) . '%', 'yellow');
+    
+                $round++;
             }
         } else {
-            $pp->writeLn('You are probably fighting a ghost', 'red');
+            $pp->writeLn('You are probably fighting a ghost.', 'red');
         }
     }
+    
+    
     private function heal(string $npc_name) {
         $pp = $this->container->getPrettyPrinter();
         $npc = $this->container->getMap()->getCurrentBlueprint()->getNpc($npc_name);
