@@ -5,6 +5,7 @@ namespace Rpg\Game\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class IronSlime extends Monster {
+    private $life = 12;
 
     public function name() : string {
         return 'Iron Slime';
@@ -19,7 +20,7 @@ class IronSlime extends Monster {
     }
 
     public function health_points(): int { 
-        return 12;
+        return $this->life;
     }
 
     public function defense(): int { 
@@ -49,7 +50,12 @@ class IronSlime extends Monster {
 
     public function getLife($damage): int
     {
-        return 12 - $damage; 
+        $this->life -= $damage;
+        return $this->life;
+    }
+
+    public function fight() : array {
+        return [];
     }
 
 }

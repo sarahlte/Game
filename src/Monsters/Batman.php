@@ -46,7 +46,8 @@ class Batman extends Monster {
     }
     public function getLife($damage): int
     {
-        return 100;
+        $this->life -= $damage;
+        return $this->life;
     }
 
     public function fight() : array {

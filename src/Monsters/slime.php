@@ -48,7 +48,11 @@ class Slime extends Monster {
 
     public function getLife($damage): int
     {
-        return 8 - $damage;
+        $this->life -= $damage;
+        return $this->life;
     }
 
+    public function fight() : array {
+        return [];
+    }
 }

@@ -28,7 +28,7 @@ class Goblin extends Monster {
     }
 
     public function experience(): int { 
-        return 20;
+        return 15;
     }
 
     public function skills(): array { 
