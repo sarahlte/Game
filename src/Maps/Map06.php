@@ -5,6 +5,7 @@ namespace Rpg\Game\Maps;
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
 use Rpg\Game\Monsters\Goblin;
+use Rpg\Game\Npcs\Cancer;
 
 class Map06 extends Blueprint {
   private Position $position;
@@ -27,7 +28,7 @@ class Map06 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Cancer()];
   }
 
   public function items(): array {
