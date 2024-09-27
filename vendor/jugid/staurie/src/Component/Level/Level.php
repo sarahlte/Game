@@ -83,7 +83,7 @@ class Level extends AbstractComponent {
             'formula' => '{level}*{level}+110',
             'max_level' => 50,
             'start_points' => 3,
-            'point_per_level' => 3
+            'point_per_level' => 5
         ];
     }
 }
