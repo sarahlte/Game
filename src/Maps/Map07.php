@@ -4,7 +4,7 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
-use Rpg\Game\Monsters\Goblin;
+use Rpg\Game\Monsters\Batman;
 
 class Map07 extends Blueprint {
   private Position $position;
