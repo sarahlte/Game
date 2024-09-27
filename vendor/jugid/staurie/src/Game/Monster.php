@@ -12,7 +12,6 @@ use Jugid\Staurie\Interface\Speakable;
 abstract class Monster implements Containerable, Describable, Fightable {
 
     private Container $container;
-    public $life;
 
     final public function setContainer(Container $container) : void {
         $this->container = $container;
@@ -23,5 +22,5 @@ abstract class Monster implements Containerable, Describable, Fightable {
     abstract function defense() : int;
     abstract function experience() : int;
     abstract function skills() : array;
-    
+
 }

@@ -4,46 +4,48 @@ namespace Rpg\Game\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 
-class Batman extends Monster {
-    private $life = 100;
+class Slime extends Monster {
 
     public function name() : string {
-        return 'Batman';
+        return 'Slime';
     }
 
     public function description(): string { 
-        return 'The named boss Batman';
+        return 'A gooey creature that oozes across the ground, capable of engulfing its prey.';
     }
 
     public function level() : int {
-        return 5;
+        return 1;
     }
 
     public function health_points(): int { 
-        return 100;
+        return 8;
     }
 
     public function defense(): int { 
-        return 2;
+        return 1;
     }
 
     public function experience(): int { 
-        return 150;
+        return 15;
     }
 
     public function skills(): array { 
         return [
-            'Sucking' => 10,
+            'Slime Shot' => 3,
         ];
     }
+
     public function getAttack(): int
     {
-        return 10;
+        return 3;
     }
+
     public function getDefense(): int
     {
-        return 2;
+        return 1;
     }
+
     public function getLife($damage): int
     {
         $this->life -= $damage;
@@ -53,5 +55,4 @@ class Batman extends Monster {
     public function fight() : array {
         return [];
     }
-    
 }

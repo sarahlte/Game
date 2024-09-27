@@ -5,6 +5,7 @@ namespace Rpg\Game\Monsters;
 use Jugid\Staurie\Game\Monster;
 
 class Kobold extends Monster {
+    private $life = 15;
 
     public function name() : string {
         return 'Kobold';
@@ -19,9 +20,6 @@ class Kobold extends Monster {
     }
 
     public function health_points(): int {
-        if (!$this->life) {
-            $this->life = 15;  
-        }
         return $this->life;
     }
 
@@ -44,14 +42,19 @@ class Kobold extends Monster {
     {
         return 3;
     }
+    
     public function getDefense(): int
     {
         return 3;
     }
+
     public function getLife($damage): int
     {
         $this->life -= $damage;
         return $this->life;
     }
 
+    public function fight() : array {
+        return [];
+    }
 }

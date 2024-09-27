@@ -4,46 +4,49 @@ namespace Rpg\Game\Monsters;
 
 use Jugid\Staurie\Game\Monster;
 
-class Batman extends Monster {
-    private $life = 100;
+class Rat extends Monster {
 
     public function name() : string {
-        return 'Batman';
+        return 'Rat';
     }
 
     public function description(): string { 
-        return 'The named boss Batman';
+        return 'A giant sewer rat that scurries through the shadows, known for its quick movements and tendency to bite.';
     }
 
     public function level() : int {
-        return 5;
+        return 1;
     }
 
     public function health_points(): int { 
-        return 100;
+        return 8;
     }
 
     public function defense(): int { 
-        return 2;
+        return 1;
     }
 
     public function experience(): int { 
-        return 150;
+        return 10;
     }
 
     public function skills(): array { 
         return [
-            'Sucking' => 10,
+            'Bite' => 2,
+            'Poisonous Bite' => 1,
         ];
     }
+
     public function getAttack(): int
     {
-        return 10;
+        return 2; 
     }
+
     public function getDefense(): int
     {
-        return 2;
+        return 1; 
     }
+
     public function getLife($damage): int
     {
         $this->life -= $damage;
@@ -53,5 +56,5 @@ class Batman extends Monster {
     public function fight() : array {
         return [];
     }
-    
+
 }
