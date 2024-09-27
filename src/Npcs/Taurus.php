@@ -29,5 +29,10 @@ class Taurus extends Npc {
     public function healSpeak() : string|array {
         return [];
     }
+    
+    public function limitUse() : int {
+        return 0;
+    }
+    
 
 }

@@ -210,7 +210,7 @@ class MainCharacter extends AbstractComponent {
         $npc = $this->container->getMap()->getCurrentBlueprint()->getNpc($npc_name);
 
         if(null !== $npc && $npc instanceof Npc) {
-            if ($npc->heal() > 0) {
+            if ($npc->heal() > 0 && $npc->limitUse() > 0) {
                 $dialog = $npc->healSpeak();
                 $pv = $npc->heal();
                 $this->printNpcDialog($npc_name, $dialog);
@@ -301,7 +301,11 @@ class MainCharacter extends AbstractComponent {
                 if($level->points >= $number) {
                     $this->statistics->add($stat, $number);
                     $level->points -= $number;
-                    $pp->writeLn("One point added to $stat", 'green');
+                    if ($number == 1){
+                        $pp->writeLn("One point added to $stat", 'green');
+                    } else {
+                        $pp->writeLn($number." points added to $stat", 'green');
+                    }
                     break;
                 }
                 $pp->writeLn("You don't have enough points", 'red');

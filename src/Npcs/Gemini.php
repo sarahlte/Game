@@ -23,12 +23,16 @@ class Gemini extends Npc {
     }
 
     
-  public function heal() : int {
-    return 0;
-  }
+    public function heal() : int {
+        return 0;
+    }
 
-  public function healSpeak() : string|array {
-      return [];
-  }
+    public function healSpeak() : string|array {
+        return [];
+    }
+    public function limitUse() : int {
+        return 0;
+    }
+
 
 }

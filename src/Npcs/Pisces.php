@@ -22,13 +22,17 @@ class Pisces extends Npc {
         '(as you receive the scale, both figures merge into the water and disappear, leaving behind a calming energy)'];
     }
 
-    
-  public function heal() : int {
-    return 0;
-  }
+    public function heal() : int {
+        return 0;
+    }
 
-  public function healSpeak() : string|array {
-      return [];
-  }
+    public function healSpeak() : string|array {
+        return [];
+    }
+
+    public function limitUse() : int {
+        return 0;
+    }
+
 
 }

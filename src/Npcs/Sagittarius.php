@@ -20,14 +20,18 @@ class Sagittarius extends Npc {
         return ['Well done, traveler, you treuly deserve to hunt by my side.',
         '(the big hands of the man handle you a golden bow.)'];
     }
-
     
-  public function heal() : int {
-    return 0;
-  }
+    public function heal() : int {
+        return 0;
+    }
 
-  public function healSpeak() : string|array {
-      return [];
-  }
+    public function healSpeak() : string|array {
+        return [];
+    }
+    
+    public function limitUse() : int {
+        return 0;
+    }
+
 
 }

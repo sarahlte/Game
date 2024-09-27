@@ -26,6 +26,8 @@ class Healer extends Npc {
         return ['Hello, traveler. You must be tired, right ? Here, let me help.'];
     }
 
-    
+    public function limitUse() : int {
+        return 1;
+    }
 
 }

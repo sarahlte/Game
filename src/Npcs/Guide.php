@@ -34,4 +34,9 @@ class Guide extends Npc {
       return [];
   }
 
+  public function limitUse() : int {
+    return 0;
+  }
+
+
 }
