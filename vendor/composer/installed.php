@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'rpg/game',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '69d34d3bc593d74dbeeef5564ebf7a568bab790c',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'jugid/staurie' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => 'b31baa2a363b626f257e98136d9b2c29a61468b0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jugid/staurie',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'rpg/game' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '69d34d3bc593d74dbeeef5564ebf7a568bab790c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/finder' => array(
+            'pretty_version' => 'v6.4.11',
+            'version' => '6.4.11.0',
+            'reference' => 'd7eb6daf8cd7e9ac4976e9576b32042ef7253453',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/finder',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
