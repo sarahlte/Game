@@ -11,7 +11,7 @@ class Map20 extends Blueprint {
 
   public function __construct()
   {
-      $this->position = new Position(5,10);
+      $this->position = new Position(5,8);
   }
 
   public function name(): string {

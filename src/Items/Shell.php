@@ -16,7 +16,7 @@ class Shell extends Item_Equippable {
     }
 
     public function body_part(): string { 
-        return 'Shell';
+        return 'shoulders';
     }
 
     public function statistics(): array
