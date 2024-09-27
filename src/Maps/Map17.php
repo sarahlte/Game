@@ -4,6 +4,8 @@ namespace Rpg\Game\Maps;
 
 use Jugid\Staurie\Component\Map\Blueprint;
 use Jugid\Staurie\Game\Position\Position;
+use Rpg\Game\Npcs\Healer;
+
 
 class Map17 extends Blueprint {
   private Position $position;
@@ -26,7 +28,7 @@ class Map17 extends Blueprint {
   }
 
   public function npcs(): array {
-    return [];
+    return [new Healer()];
   }
 
   public function items(): array {
