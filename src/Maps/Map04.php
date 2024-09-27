@@ -19,7 +19,7 @@ class Map04 extends Blueprint {
   }
 
   public function description(): string { 
-    return '';
+    return 'An (almost) empty plain.';
   }
   
   public function position(): Position {
