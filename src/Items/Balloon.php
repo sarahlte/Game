@@ -22,7 +22,7 @@ class Balloon extends Item_Equippable {
     public function statistics(): array
     {
         return [
-            'attack'=> 9999,
+            'attack'=> -3,
             'health'=>9999,
             'wisdom'=> 9999,
             'defense'=>10
