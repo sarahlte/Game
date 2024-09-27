@@ -98,6 +98,12 @@ abstract class Blueprint implements Containerable, Initializable, Describable, P
     }
 
     public function getMonsters() : ?array {
+        foreach ($this->monsters as $monster) {
+            if ($monster->health_points() <= 0){
+                $name = $monster->name();
+                unset($this->monsters[$name]);
+            }
+        }
         return $this->monsters;
     }
 
